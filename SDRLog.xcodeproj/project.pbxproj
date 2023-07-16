@@ -8,15 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		9F8B1C602A5F1EA000E1D9F1 /* SDRLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B1C5F2A5F1EA000E1D9F1 /* SDRLogApp.swift */; };
-		9F8B1C622A5F1EA000E1D9F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B1C612A5F1EA000E1D9F1 /* ContentView.swift */; };
 		9F8B1C642A5F1EA000E1D9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8B1C632A5F1EA000E1D9F1 /* Assets.xcassets */; };
 		9F8B1C672A5F1EA000E1D9F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8B1C662A5F1EA000E1D9F1 /* Preview Assets.xcassets */; };
+		9F8B1C702A5F1F2000E1D9F1 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9F8B1C6F2A5F1F2000E1D9F1 /* ComposableArchitecture */; };
+		9F8B1C732A5F1F9700E1D9F1 /* LogView in Frameworks */ = {isa = PBXBuildFile; productRef = 9F8B1C722A5F1F9700E1D9F1 /* LogView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F55F4D02A634498003F5ABE /* ApiFeatures */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ApiFeatures; path = ../Packages/ApiFeatures; sourceTree = "<group>"; };
+		9F55F4D12A63449E003F5ABE /* ViewFeatures */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ViewFeatures; path = ../Packages/ViewFeatures; sourceTree = "<group>"; };
 		9F8B1C5C2A5F1EA000E1D9F1 /* SDRLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDRLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8B1C5F2A5F1EA000E1D9F1 /* SDRLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDRLogApp.swift; sourceTree = "<group>"; };
-		9F8B1C612A5F1EA000E1D9F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9F8B1C632A5F1EA000E1D9F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F8B1C662A5F1EA000E1D9F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F8B1C682A5F1EA000E1D9F1 /* SDRLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SDRLog.entitlements; sourceTree = "<group>"; };
@@ -27,6 +29,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F8B1C732A5F1F9700E1D9F1 /* LogView in Frameworks */,
+				9F8B1C702A5F1F2000E1D9F1 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +40,8 @@
 		9F8B1C532A5F1EA000E1D9F1 = {
 			isa = PBXGroup;
 			children = (
+				9F55F4D12A63449E003F5ABE /* ViewFeatures */,
+				9F55F4D02A634498003F5ABE /* ApiFeatures */,
 				9F8B1C5E2A5F1EA000E1D9F1 /* SDRLog */,
 				9F8B1C5D2A5F1EA000E1D9F1 /* Products */,
 			);
@@ -52,11 +58,10 @@
 		9F8B1C5E2A5F1EA000E1D9F1 /* SDRLog */ = {
 			isa = PBXGroup;
 			children = (
-				9F8B1C5F2A5F1EA000E1D9F1 /* SDRLogApp.swift */,
-				9F8B1C612A5F1EA000E1D9F1 /* ContentView.swift */,
 				9F8B1C632A5F1EA000E1D9F1 /* Assets.xcassets */,
-				9F8B1C682A5F1EA000E1D9F1 /* SDRLog.entitlements */,
 				9F8B1C652A5F1EA000E1D9F1 /* Preview Content */,
+				9F8B1C682A5F1EA000E1D9F1 /* SDRLog.entitlements */,
+				9F8B1C5F2A5F1EA000E1D9F1 /* SDRLogApp.swift */,
 			);
 			path = SDRLog;
 			sourceTree = "<group>";
@@ -85,6 +90,10 @@
 			dependencies = (
 			);
 			name = SDRLog;
+			packageProductDependencies = (
+				9F8B1C6F2A5F1F2000E1D9F1 /* ComposableArchitecture */,
+				9F8B1C722A5F1F9700E1D9F1 /* LogView */,
+			);
 			productName = SDRLog;
 			productReference = 9F8B1C5C2A5F1EA000E1D9F1 /* SDRLog.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +122,10 @@
 				Base,
 			);
 			mainGroup = 9F8B1C532A5F1EA000E1D9F1;
+			packageReferences = (
+				9F8B1C6E2A5F1F2000E1D9F1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				9F8B1C712A5F1F9700E1D9F1 /* XCRemoteSwiftPackageReference "ViewFeatures" */,
+			);
 			productRefGroup = 9F8B1C5D2A5F1EA000E1D9F1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,7 +152,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F8B1C622A5F1EA000E1D9F1 /* ContentView.swift in Sources */,
 				9F8B1C602A5F1EA000E1D9F1 /* SDRLogApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +291,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.k3tzr.SDRLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -306,7 +318,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.k3tzr.SDRLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -336,6 +348,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9F8B1C6E2A5F1F2000E1D9F1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.55.0;
+			};
+		};
+		9F8B1C712A5F1F9700E1D9F1 /* XCRemoteSwiftPackageReference "ViewFeatures" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/K3TZR/ViewFeatures.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9F8B1C6F2A5F1F2000E1D9F1 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F8B1C6E2A5F1F2000E1D9F1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		9F8B1C722A5F1F9700E1D9F1 /* LogView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F8B1C712A5F1F9700E1D9F1 /* XCRemoteSwiftPackageReference "ViewFeatures" */;
+			productName = LogView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9F8B1C542A5F1EA000E1D9F1 /* Project object */;
 }
