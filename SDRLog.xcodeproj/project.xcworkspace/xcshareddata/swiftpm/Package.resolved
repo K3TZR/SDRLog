@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "commonfeatures",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/K3TZR/CommonFeatures.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "841b6da75a878d1656e2f898b53bd45dc89c24f8"
+      }
+    },
+    {
       "identity" : "customcontrols",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/K3TZR/CustomControls.git",

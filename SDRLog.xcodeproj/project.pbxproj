@@ -30,7 +30,6 @@
 		9F8B1C632A5F1EA000E1D9F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F8B1C662A5F1EA000E1D9F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F8B1C682A5F1EA000E1D9F1 /* SDRLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SDRLog.entitlements; sourceTree = "<group>"; };
-		9FD8298A2AFE91FF002EC81C /* CommonFeatures */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = CommonFeatures; path = ../Packages/CommonFeatures; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +58,6 @@
 		9F8B1C532A5F1EA000E1D9F1 = {
 			isa = PBXGroup;
 			children = (
-				9FD8298A2AFE91FF002EC81C /* CommonFeatures */,
 				9F8B1C5E2A5F1EA000E1D9F1 /* SDRLog */,
 				9F8B1C5D2A5F1EA000E1D9F1 /* Products */,
 				9FD829842AFE8AC8002EC81C /* Frameworks */,
