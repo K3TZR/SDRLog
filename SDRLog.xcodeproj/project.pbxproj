@@ -7,24 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F24BFB82BA5C811006B506B /* SDRLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F24BFB62BA5C811006B506B /* SDRLogView.swift */; };
+		9F24BFBD2BA5CE64006B506B /* SDRLogCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F24BFBC2BA5CE64006B506B /* SDRLogCore.swift */; };
+		9F24BFC02BA5D141006B506B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9F24BFBF2BA5D141006B506B /* ComposableArchitecture */; };
 		9F8B1C602A5F1EA000E1D9F1 /* SDRLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B1C5F2A5F1EA000E1D9F1 /* SDRLogApp.swift */; };
 		9F8B1C642A5F1EA000E1D9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8B1C632A5F1EA000E1D9F1 /* Assets.xcassets */; };
 		9F8B1C672A5F1EA000E1D9F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8B1C662A5F1EA000E1D9F1 /* Preview Assets.xcassets */; };
-		9FD8298F2AFFAA4D002EC81C /* ClientSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD8298E2AFFAA4D002EC81C /* ClientSheet */; };
-		9FD829912AFFAA4D002EC81C /* Flag in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD829902AFFAA4D002EC81C /* Flag */; };
-		9FD829932AFFAA4D002EC81C /* FlagAntennaPopover in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD829922AFFAA4D002EC81C /* FlagAntennaPopover */; };
-		9FD829952AFFAA4D002EC81C /* LogViewer in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD829942AFFAA4D002EC81C /* LogViewer */; };
-		9FD829972AFFAA4D002EC81C /* LoginSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD829962AFFAA4D002EC81C /* LoginSheet */; };
-		9FD829992AFFAA4D002EC81C /* MonitorControl in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD829982AFFAA4D002EC81C /* MonitorControl */; };
-		9FD8299B2AFFAA4D002EC81C /* Panadapter in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD8299A2AFFAA4D002EC81C /* Panadapter */; };
-		9FD8299D2AFFAA4D002EC81C /* Panafall in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD8299C2AFFAA4D002EC81C /* Panafall */; };
-		9FD8299F2AFFAA4D002EC81C /* PickerSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD8299E2AFFAA4D002EC81C /* PickerSheet */; };
-		9FD829A12AFFAA4D002EC81C /* SettingsPanel in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD829A02AFFAA4D002EC81C /* SettingsPanel */; };
-		9FD829A32AFFAA4D002EC81C /* SidePanel in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD829A22AFFAA4D002EC81C /* SidePanel */; };
-		9FD829A52AFFAA4D002EC81C /* Waterfall in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD829A42AFFAA4D002EC81C /* Waterfall */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F24BFB62BA5C811006B506B /* SDRLogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDRLogView.swift; sourceTree = "<group>"; };
+		9F24BFBC2BA5CE64006B506B /* SDRLogCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDRLogCore.swift; sourceTree = "<group>"; };
 		9F8B1C5C2A5F1EA000E1D9F1 /* SDRLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDRLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8B1C5F2A5F1EA000E1D9F1 /* SDRLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDRLogApp.swift; sourceTree = "<group>"; };
 		9F8B1C632A5F1EA000E1D9F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,18 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FD829932AFFAA4D002EC81C /* FlagAntennaPopover in Frameworks */,
-				9FD8299B2AFFAA4D002EC81C /* Panadapter in Frameworks */,
-				9FD829A12AFFAA4D002EC81C /* SettingsPanel in Frameworks */,
-				9FD829A52AFFAA4D002EC81C /* Waterfall in Frameworks */,
-				9FD829A32AFFAA4D002EC81C /* SidePanel in Frameworks */,
-				9FD829972AFFAA4D002EC81C /* LoginSheet in Frameworks */,
-				9FD829952AFFAA4D002EC81C /* LogViewer in Frameworks */,
-				9FD8299F2AFFAA4D002EC81C /* PickerSheet in Frameworks */,
-				9FD829992AFFAA4D002EC81C /* MonitorControl in Frameworks */,
-				9FD829912AFFAA4D002EC81C /* Flag in Frameworks */,
-				9FD8298F2AFFAA4D002EC81C /* ClientSheet in Frameworks */,
-				9FD8299D2AFFAA4D002EC81C /* Panafall in Frameworks */,
+				9F24BFC02BA5D141006B506B /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +61,8 @@
 				9F8B1C652A5F1EA000E1D9F1 /* Preview Content */,
 				9F8B1C682A5F1EA000E1D9F1 /* SDRLog.entitlements */,
 				9F8B1C5F2A5F1EA000E1D9F1 /* SDRLogApp.swift */,
+				9F24BFBC2BA5CE64006B506B /* SDRLogCore.swift */,
+				9F24BFB62BA5C811006B506B /* SDRLogView.swift */,
 			);
 			path = SDRLog;
 			sourceTree = "<group>";
@@ -115,18 +99,7 @@
 			);
 			name = SDRLog;
 			packageProductDependencies = (
-				9FD8298E2AFFAA4D002EC81C /* ClientSheet */,
-				9FD829902AFFAA4D002EC81C /* Flag */,
-				9FD829922AFFAA4D002EC81C /* FlagAntennaPopover */,
-				9FD829942AFFAA4D002EC81C /* LogViewer */,
-				9FD829962AFFAA4D002EC81C /* LoginSheet */,
-				9FD829982AFFAA4D002EC81C /* MonitorControl */,
-				9FD8299A2AFFAA4D002EC81C /* Panadapter */,
-				9FD8299C2AFFAA4D002EC81C /* Panafall */,
-				9FD8299E2AFFAA4D002EC81C /* PickerSheet */,
-				9FD829A02AFFAA4D002EC81C /* SettingsPanel */,
-				9FD829A22AFFAA4D002EC81C /* SidePanel */,
-				9FD829A42AFFAA4D002EC81C /* Waterfall */,
+				9F24BFBF2BA5D141006B506B /* ComposableArchitecture */,
 			);
 			productName = SDRLog;
 			productReference = 9F8B1C5C2A5F1EA000E1D9F1 /* SDRLog.app */;
@@ -140,7 +113,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					9F8B1C5B2A5F1EA000E1D9F1 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -157,7 +130,7 @@
 			);
 			mainGroup = 9F8B1C532A5F1EA000E1D9F1;
 			packageReferences = (
-				9FD8298D2AFFAA4D002EC81C /* XCRemoteSwiftPackageReference "ViewFeatures" */,
+				9F24BFBE2BA5D141006B506B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 9F8B1C5D2A5F1EA000E1D9F1 /* Products */;
 			projectDirPath = "";
@@ -185,7 +158,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F24BFB82BA5C811006B506B /* SDRLogView.swift in Sources */,
 				9F8B1C602A5F1EA000E1D9F1 /* SDRLogApp.swift in Sources */,
+				9F24BFBD2BA5CE64006B506B /* SDRLogCore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,76 +366,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9FD8298D2AFFAA4D002EC81C /* XCRemoteSwiftPackageReference "ViewFeatures" */ = {
+		9F24BFBE2BA5D141006B506B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/K3TZR/ViewFeatures.git";
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9FD8298E2AFFAA4D002EC81C /* ClientSheet */ = {
+		9F24BFBF2BA5D141006B506B /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9FD8298D2AFFAA4D002EC81C /* XCRemoteSwiftPackageReference "ViewFeatures" */;
-			productName = ClientSheet;
-		};
-		9FD829902AFFAA4D002EC81C /* Flag */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9FD8298D2AFFAA4D002EC81C /* XCRemoteSwiftPackageReference "ViewFeatures" */;
-			productName = Flag;
-		};
-		9FD829922AFFAA4D002EC81C /* FlagAntennaPopover */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9FD8298D2AFFAA4D002EC81C /* XCRemoteSwiftPackageReference "ViewFeatures" */;
-			productName = FlagAntennaPopover;
-		};
-		9FD829942AFFAA4D002EC81C /* LogViewer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9FD8298D2AFFAA4D002EC81C /* XCRemoteSwiftPackageReference "ViewFeatures" */;
-			productName = LogViewer;
-		};
-		9FD829962AFFAA4D002EC81C /* LoginSheet */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9FD8298D2AFFAA4D002EC81C /* XCRemoteSwiftPackageReference "ViewFeatures" */;
-			productName = LoginSheet;
-		};
-		9FD829982AFFAA4D002EC81C /* MonitorControl */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9FD8298D2AFFAA4D002EC81C /* XCRemoteSwiftPackageReference "ViewFeatures" */;
-			productName = MonitorControl;
-		};
-		9FD8299A2AFFAA4D002EC81C /* Panadapter */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9FD8298D2AFFAA4D002EC81C /* XCRemoteSwiftPackageReference "ViewFeatures" */;
-			productName = Panadapter;
-		};
-		9FD8299C2AFFAA4D002EC81C /* Panafall */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9FD8298D2AFFAA4D002EC81C /* XCRemoteSwiftPackageReference "ViewFeatures" */;
-			productName = Panafall;
-		};
-		9FD8299E2AFFAA4D002EC81C /* PickerSheet */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9FD8298D2AFFAA4D002EC81C /* XCRemoteSwiftPackageReference "ViewFeatures" */;
-			productName = PickerSheet;
-		};
-		9FD829A02AFFAA4D002EC81C /* SettingsPanel */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9FD8298D2AFFAA4D002EC81C /* XCRemoteSwiftPackageReference "ViewFeatures" */;
-			productName = SettingsPanel;
-		};
-		9FD829A22AFFAA4D002EC81C /* SidePanel */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9FD8298D2AFFAA4D002EC81C /* XCRemoteSwiftPackageReference "ViewFeatures" */;
-			productName = SidePanel;
-		};
-		9FD829A42AFFAA4D002EC81C /* Waterfall */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9FD8298D2AFFAA4D002EC81C /* XCRemoteSwiftPackageReference "ViewFeatures" */;
-			productName = Waterfall;
+			package = 9F24BFBE2BA5D141006B506B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
