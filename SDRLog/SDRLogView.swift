@@ -110,8 +110,8 @@ struct LogBodyView: View {
 struct LogFooter: View {
   @Bindable var store: StoreOf<SDRLogCore>
   
-  //  @Environment(LogModel.self) var logModel
-  
+  @State private var showOpenPanel: Bool = false
+
   var body: some View {
     
     HStack {

@@ -90,7 +90,7 @@ public struct SDRLogCore {
     case loadButtonTapped
     case refreshButtonTapped
     case saveButtonTapped
-
+    
     // secondary actions
     case showAlert(Alert,String)
     
@@ -124,7 +124,7 @@ public struct SDRLogCore {
         return .none
         
       case .loadButtonTapped:
-        if let loadUrl = showOpenPanel(state.folderUrl) {
+        if let loadUrl = showOpenPanel(state.folderUrl, state.appSelection) {
           state.logLines.removeAll()
           state.fileUrl = loadUrl
           readLogFile(&state)
@@ -152,7 +152,7 @@ public struct SDRLogCore {
         state.logLines.removeAll()
         readLogFile(&state)
         return .none
-
+        
       case .binding(\.autoRefresh):
         if state.autoRefresh {
           return .run { send in
@@ -162,28 +162,28 @@ public struct SDRLogCore {
               }
             }
           }
-
+          
         }
         else {
           return Effect.cancel(id: CancelID.response)
         }
-
+        
       case .binding(\.filterText):
         filterLog(&state)
         return .none
-
+        
       case .binding(\.filterBy):
         filterLog(&state)
         return .none
-
+        
       case .binding(\.showLevel):
         filterLog(&state)
         return .none
-
+        
       case .binding(\.showTimestamps):
         filterLog(&state)
         return .none
-
+        
       case .binding(_):
         return .none
         
@@ -311,8 +311,10 @@ public struct SDRLogCore {
   
   /// Display an OpenPanel
   /// - Returns:        the URL of the selected file or nil
-  private func showOpenPanel(_ logFolderUrl: URL) -> URL? {
+  private func showOpenPanel(_ logFolderUrl: URL, _ appName: String) -> URL? {
+    let delegate = panelDelegate(appName)
     let openPanel = NSOpenPanel()
+    openPanel.delegate = delegate
     openPanel.directoryURL = logFolderUrl
     openPanel.allowedContentTypes = [.text]
     openPanel.allowsMultipleSelection = false
@@ -322,43 +324,21 @@ public struct SDRLogCore {
     let response = openPanel.runModal()
     return response == .OK ? openPanel.url : nil
   }
-
-//  private func autoRefreshStart(_ state: inout State) {
-//    state.autoRefreshTask = Task {
-//      while true {
-//        // a guiClient has been added / updated or deleted
-//        await MainActor.run  { refresh(&state) }
-//        do {
-//          try await Task.sleep(nanoseconds: NSEC_PER_SEC)
-//        } catch {
-//          break
-//        }
-//      }
-//    }
-//  }
-
-  
-  
-  
-  
-  
-  
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+class panelDelegate: NSObject, NSOpenSavePanelDelegate {
+  var appName: String
+  
+  init(_ appName: String) {
+    self.appName = appName
+    super.init()
+  }
+  
+  func panel(_ sender: Any, shouldEnable url: URL) -> Bool {
+    let components = url.lastPathComponent.components(separatedBy: ".")
+    return components[0].contains(appName)
+  }
+}
 
 // ----------------------------------------------------------------------------
 // MARK: - Extensions
