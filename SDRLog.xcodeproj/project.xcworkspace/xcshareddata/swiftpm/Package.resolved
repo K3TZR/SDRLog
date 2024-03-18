@@ -1,5 +1,5 @@
 {
-  "originHash" : "81d703dd6e7ef361d922e4159d56e99fa7337762368097761b4ba0ff022b4d31",
+  "originHash" : "b134d1f1a58446b6fee616ea57f9ca764c0b13d23225b921df59c1b5ec71ba8e",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "9dc9cbe4bc45c65164fa653a563d8d8db61b09bb",
         "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "logfeatures",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/K3TZR/LogFeatures.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "c5361c21b6aa03e9d1d99305ac9bdee46f599116"
       }
     },
     {
@@ -107,6 +116,15 @@
       "state" : {
         "revision" : "d9e72f3083c08375794afa216fb2f89c0114f303",
         "version" : "1.2.1"
+      }
+    },
+    {
+      "identity" : "xcglogger",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DaveWoodCom/XCGLogger.git",
+      "state" : {
+        "revision" : "a9c4667b247928a29bdd41be2ec2c8d304215a54",
+        "version" : "7.0.1"
       }
     },
     {

@@ -9,31 +9,33 @@ import ComposableArchitecture
 import Foundation
 import SwiftUI
 
+import XCGLogFeature
+
 // struct & enums for use in the Log Viewer
-public struct LogLine: Identifiable, Equatable {
-  public var id = UUID()
-  public var text: String
-  public var color: Color
-  
-  public init(text: String, color: Color = .primary) {
-    self.text = text
-    self.color = color
-  }
-}
-
-public enum LogFilter: String, CaseIterable {
-  case none
-  case includes
-  case excludes
-  case prefix
-}
-
-public enum LogLevel: String, CaseIterable {
-    case debug
-    case info
-    case warning
-    case error
-}
+//public struct LogLine: Identifiable, Equatable {
+//  public var id = UUID()
+//  public var text: String
+//  public var color: Color
+//  
+//  public init(text: String, color: Color = .primary) {
+//    self.text = text
+//    self.color = color
+//  }
+//}
+//
+//public enum LogFilter: String, CaseIterable {
+//  case none
+//  case includes
+//  case excludes
+//  case prefix
+//}
+//
+//public enum LogLevel: String, CaseIterable {
+//    case debug
+//    case info
+//    case warning
+//    case error
+//}
 
 enum CancelID { case response }
 
@@ -155,7 +157,7 @@ public struct SDRLogCore {
         if state.autoRefresh {
           return .run { send in
             await withTaskCancellation(id: CancelID.response, cancelInFlight: true) {
-              for await tick in clock.timer(interval: .seconds(1)) {
+              for await _ in clock.timer(interval: .seconds(1)) {
                 await send(.refreshButtonTapped)
               }
             }

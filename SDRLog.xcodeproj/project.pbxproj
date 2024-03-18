@@ -10,6 +10,8 @@
 		9F24BFB82BA5C811006B506B /* SDRLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F24BFB62BA5C811006B506B /* SDRLogView.swift */; };
 		9F24BFBD2BA5CE64006B506B /* SDRLogCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F24BFBC2BA5CE64006B506B /* SDRLogCore.swift */; };
 		9F24BFC02BA5D141006B506B /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 9F24BFBF2BA5D141006B506B /* ComposableArchitecture */; };
+		9F24BFD32BA8849B006B506B /* XCGLogFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 9F24BFD22BA8849B006B506B /* XCGLogFeature */; };
+		9F24BFD62BA885E9006B506B /* XCGLogFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 9F24BFD52BA885E9006B506B /* XCGLogFeature */; };
 		9F8B1C602A5F1EA000E1D9F1 /* SDRLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8B1C5F2A5F1EA000E1D9F1 /* SDRLogApp.swift */; };
 		9F8B1C642A5F1EA000E1D9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8B1C632A5F1EA000E1D9F1 /* Assets.xcassets */; };
 		9F8B1C672A5F1EA000E1D9F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8B1C662A5F1EA000E1D9F1 /* Preview Assets.xcassets */; };
@@ -30,7 +32,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F24BFD62BA885E9006B506B /* XCGLogFeature in Frameworks */,
 				9F24BFC02BA5D141006B506B /* ComposableArchitecture in Frameworks */,
+				9F24BFD32BA8849B006B506B /* XCGLogFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +104,8 @@
 			name = SDRLog;
 			packageProductDependencies = (
 				9F24BFBF2BA5D141006B506B /* ComposableArchitecture */,
+				9F24BFD22BA8849B006B506B /* XCGLogFeature */,
+				9F24BFD52BA885E9006B506B /* XCGLogFeature */,
 			);
 			productName = SDRLog;
 			productReference = 9F8B1C5C2A5F1EA000E1D9F1 /* SDRLog.app */;
@@ -131,6 +137,7 @@
 			mainGroup = 9F8B1C532A5F1EA000E1D9F1;
 			packageReferences = (
 				9F24BFBE2BA5D141006B506B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				9F24BFD42BA885E9006B506B /* XCRemoteSwiftPackageReference "LogFeatures" */,
 			);
 			productRefGroup = 9F8B1C5D2A5F1EA000E1D9F1 /* Products */;
 			projectDirPath = "";
@@ -374,6 +381,14 @@
 				minimumVersion = 1.9.2;
 			};
 		};
+		9F24BFD42BA885E9006B506B /* XCRemoteSwiftPackageReference "LogFeatures" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/K3TZR/LogFeatures.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -381,6 +396,15 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9F24BFBE2BA5D141006B506B /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		9F24BFD22BA8849B006B506B /* XCGLogFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = XCGLogFeature;
+		};
+		9F24BFD52BA885E9006B506B /* XCGLogFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F24BFD42BA885E9006B506B /* XCRemoteSwiftPackageReference "LogFeatures" */;
+			productName = XCGLogFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

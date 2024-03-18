@@ -9,6 +9,8 @@
 import ComposableArchitecture
 import SwiftUI
 
+import XCGLogFeature
+
 // ----------------------------------------------------------------------------
 // MARK: - View
 
