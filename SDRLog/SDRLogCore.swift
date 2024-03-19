@@ -11,32 +11,6 @@ import SwiftUI
 
 import XCGLogFeature
 
-// struct & enums for use in the Log Viewer
-//public struct LogLine: Identifiable, Equatable {
-//  public var id = UUID()
-//  public var text: String
-//  public var color: Color
-//  
-//  public init(text: String, color: Color = .primary) {
-//    self.text = text
-//    self.color = color
-//  }
-//}
-//
-//public enum LogFilter: String, CaseIterable {
-//  case none
-//  case includes
-//  case excludes
-//  case prefix
-//}
-//
-//public enum LogLevel: String, CaseIterable {
-//    case debug
-//    case info
-//    case warning
-//    case error
-//}
-
 enum CancelID { case response }
 
 @Reducer
@@ -330,13 +304,13 @@ class panelDelegate: NSObject, NSOpenSavePanelDelegate {
   var appName: String
   
   init(_ appName: String) {
-    self.appName = appName
+    self.appName = appName.uppercased()
     super.init()
   }
   
   func panel(_ sender: Any, shouldEnable url: URL) -> Bool {
     let components = url.lastPathComponent.components(separatedBy: ".")
-    return components[0].contains(appName)
+    return components[0].uppercased().contains(appName)
   }
 }
 
