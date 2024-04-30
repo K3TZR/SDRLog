@@ -14,7 +14,7 @@ import XCGLogFeature
 enum CancelID { case response }
 
 @Reducer
-public struct SDRLogCore {
+public struct SDRLogCore : Sendable{
   
   public init() {}
   
@@ -26,17 +26,15 @@ public struct SDRLogCore {
   @ObservableState
   public struct State {
     
-    let AppDefaults = UserDefaults.standard
-    
     // persistent
-    var appSelection = "SDR6000"        {didSet { AppDefaults.set(appSelection, forKey: "appSelection")}}
-    var autoRefresh = false             {didSet { AppDefaults.set(autoRefresh, forKey: "autoRefresh")}}
-    var filterBy: LogFilter = .none     {didSet { AppDefaults.set(filterBy.rawValue, forKey: "filterBy")}}
-    var filterText: String = ""         {didSet { AppDefaults.set(filterText, forKey: "filterText")}}
-    var fontSize: Double = 12           {didSet { AppDefaults.set(fontSize, forKey: "fontSize")}}
-    var goToLast = false                {didSet { AppDefaults.set(goToLast, forKey: "goToLast")}}
-    var showLevel: LogLevel = .debug    {didSet { AppDefaults.set(showLevel.rawValue, forKey: "showLevel")}}
-    var showTimestamps = true           {didSet { AppDefaults.set(showTimestamps, forKey: "showTimestamps")}}
+    @Shared(.appStorage("appSelection")) var appSelection = "SDR6000"
+    @Shared(.appStorage("autoRefresh")) var autoRefresh = false
+    @Shared(.appStorage("filterBy")) var filterBy: LogFilter = .none
+    @Shared(.appStorage("filterText")) var filterText = ""
+    @Shared(.appStorage("fontSize")) var fontSize: Double = 12
+    @Shared(.appStorage("goToLast")) var goToLast = false
+    @Shared(.appStorage("showLevel")) var showLevel: LogLevel = .debug
+    @Shared(.appStorage("showTimestamps")) var showTimestamps = true
     
     // non-persistent
     var initialized = false
@@ -55,7 +53,7 @@ public struct SDRLogCore {
   // ----------------------------------------------------------------------------
   // MARK: - Actions
   
-  public enum Action: BindableAction {
+  public enum Action: BindableAction, Sendable {
     case binding(BindingAction<State>)
     
     case onAppear
@@ -72,7 +70,7 @@ public struct SDRLogCore {
     case alert(PresentationAction<Alert>)
     
     // alert sub-actions
-    public enum Alert : String {
+    public enum Alert : String, Sendable {
       case unknownError = "Unknown error logged"
     }
   }
@@ -98,11 +96,16 @@ public struct SDRLogCore {
         return .none
         
       case .loadButtonTapped:
-        if let loadUrl = showOpenPanel(state.folderUrl, state.appSelection) {
-          state.logLines.removeAll()
-          state.fileUrl = loadUrl
-          readLogFile(&state)
-        }
+//        return .run {[folderUrl = state.foulderUrl, appSelection = state.appSelection] send in
+//          if let loadUrl = await showOpenPanel(folderUrl, appSelection) {
+//            state.logLines.removeAll()
+//            state.fileUrl = loadUrl
+//            readLogFile(&state)
+//            await send(.refreshButtonTapped)
+//          } else {
+//            return .none
+//          }
+//        }
         return .none
         
       case .refreshButtonTapped:
@@ -111,12 +114,13 @@ public struct SDRLogCore {
         return .none
         
       case .saveButtonTapped:
-        if let saveUrl = showSavePanel() {
-          let textArray = state.filteredLogLines.map { $0.text }
-          let fileTextArray = textArray.joined(separator: "\n")
-          try? fileTextArray.write(to: saveUrl, atomically: true, encoding: .utf8)
+        return .run {[loglines = state.filteredLogLines] _ in
+          if let saveUrl = await showSavePanel() {
+            let textArray = loglines.map { $0.text }
+            let fileTextArray = textArray.joined(separator: "\n")
+            try? fileTextArray.write(to: saveUrl, atomically: true, encoding: .utf8)
+          }
         }
-        return .none
         
         // ----------------------------------------------------------------------------
         // MARK: - Root Binding Actions
@@ -137,8 +141,7 @@ public struct SDRLogCore {
             }
           }
           
-        }
-        else {
+        } else {
           return Effect.cancel(id: CancelID.response)
         }
         
@@ -186,17 +189,6 @@ public struct SDRLogCore {
   
   private func initState(_ state: inout State) -> Effect<SDRLogCore.Action> {
     if state.initialized == false {
-      
-      // load from User Defaults (use default value if not in User Defaults)
-      state.appSelection = UserDefaults.standard.string(forKey: "appSelection") ?? "SDR6000"
-      state.autoRefresh = UserDefaults.standard.bool(forKey: "autoRefresh")
-      state.filterBy = LogFilter(rawValue: UserDefaults.standard.string(forKey: "filterBy") ?? "none") ?? .none
-      state.filterText = UserDefaults.standard.string(forKey: "filterText") ?? ""
-      state.fontSize = UserDefaults.standard.double(forKey: "fontSize") == 0 ? 12 : UserDefaults.standard.double(forKey: "fontSize")
-      state.goToLast = UserDefaults.standard.bool(forKey: "goToLast")
-      state.showLevel = LogLevel(rawValue: UserDefaults.standard.string(forKey: "showLevel") ?? "debug") ?? .debug
-      state.showTimestamps = UserDefaults.standard.bool(forKey: "showTimestamps")
-      
       
       if let container = FileManager().containerURL(forSecurityApplicationGroupIdentifier: "group.net.k3tzr.flexapps") {
         state.folderUrl = container.appending(path: "Library/Application Support/Logs")
@@ -269,7 +261,7 @@ public struct SDRLogCore {
   
   /// Display a SavePanel
   /// - Returns:       the URL of the selected file or nil
-  private func showSavePanel() -> URL? {
+  @MainActor private func showSavePanel() -> URL? {
     let savePanel = NSSavePanel()
     savePanel.directoryURL = FileManager().urls(for: .desktopDirectory, in: .userDomainMask).first
     savePanel.allowedContentTypes = [.text]
@@ -285,7 +277,7 @@ public struct SDRLogCore {
   
   /// Display an OpenPanel
   /// - Returns:        the URL of the selected file or nil
-  private func showOpenPanel(_ logFolderUrl: URL, _ appName: String) -> URL? {
+  @MainActor private func showOpenPanel(_ logFolderUrl: URL, _ appName: String) -> URL? {
     let delegate = panelDelegate(appName)
     let openPanel = NSOpenPanel()
     openPanel.delegate = delegate

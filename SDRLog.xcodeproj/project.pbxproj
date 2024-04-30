@@ -18,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F1D15F32BB89DF60062A4CD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9F1D16232BBB58870062A4CD /* LogFeatures */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = LogFeatures; path = ../Packages/LogFeatures; sourceTree = "<group>"; };
 		9F24BFB62BA5C811006B506B /* SDRLogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDRLogView.swift; sourceTree = "<group>"; };
 		9F24BFBC2BA5CE64006B506B /* SDRLogCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDRLogCore.swift; sourceTree = "<group>"; };
 		9F8B1C5C2A5F1EA000E1D9F1 /* SDRLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDRLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +46,8 @@
 		9F8B1C532A5F1EA000E1D9F1 = {
 			isa = PBXGroup;
 			children = (
+				9F1D16232BBB58870062A4CD /* LogFeatures */,
+				9F1D15F32BB89DF60062A4CD /* README.md */,
 				9F8B1C5E2A5F1EA000E1D9F1 /* SDRLog */,
 				9F8B1C5D2A5F1EA000E1D9F1 /* Products */,
 				9FD829842AFE8AC8002EC81C /* Frameworks */,
@@ -316,6 +320,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.k3tzr.SDRLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -345,6 +350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.k3tzr.SDRLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -378,7 +384,7 @@
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.9.2;
+				minimumVersion = 1.10.0;
 			};
 		};
 		9F24BFD42BA885E9006B506B /* XCRemoteSwiftPackageReference "LogFeatures" */ = {
